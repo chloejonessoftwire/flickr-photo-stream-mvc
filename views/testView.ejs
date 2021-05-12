@@ -2,52 +2,61 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>FlickrPhotoStream</title>
-	<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Comfortaa">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>FlickrPhotoStream</title>
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Comfortaa|Shadows+Into+Light">
 
-	<style>
-		
-		body{
-			font-family: "Open Sans", sans-serif;
-		}
-		h1{
-			font-family: 'Comfortaa', serif;
-		}
-		p {
-		  font-family: "Roboto", sans-serif;
-		}
-		</style>
-</head>
+		<style>
+			
+			body{
+				font-family: "Open Sans", sans-serif;
+			}
+			h1{
+				font-family: 'Comfortaa', serif;
+			}
+			h4{
+				font-family: 'Shadows Into Light', sans-serif;
+			}
+			p {
+			font-family: "Roboto", sans-serif;
+			}
+			</style>
+	</head>
 
-<body id="home">
-	<h1>Flickr Photo Stream</h1>
-	<h4> by Chloe Jones</h4>
-	<ul>
-		<%
-			flickrArray.forEach((item) => { %>
-			<div class='image-post'>
-				<img class='image' src='<%=item.media%>' alt='<%=item.title%>'> </img>
-				<div class='title-author'>
-					<h3><a href='<%=item.link%>' target='_blank'><%= item.title %></a></h3>
-					<h3 class='author'> by <a href='<%=item.author_link%>' target="_blank"/><%= item.author %></a></h3>
-				</div>
-				
-				<p> Posted on: <%= item.date %> at <%= item.time %>. </p>
-				<% if (item.tags!= ''){ %>
-					<p> Tags: <%= item.tags %>.</p>
-				<% } %> 
-		 		
+	<body id="home">
+		<div>
+			<div class='header'>
+				<h1>Flickr Photo Stream</h1>
+				<h4> by Chloe Jones</h4>
 			</div>
-			
-			
-		<% });
-		%>
-	</ul>
+			<div class='container'>
+				<%
+					flickrArray.forEach((item) => { %>
+					<div class='image-post'>
+						<img class='image' src='<%=item.media%>' alt='<%=item.title%>'> </img>
+						<div class='title-author'>
+							<h3 class='title'><a href='<%=item.link%>' target='_blank'><%= item.title %></a></h3>
+							<h3 class='author'> by <a href='<%=item.author_link%>' target="_blank"/><%= item.author %></a></h3>
+						</div>
+						<div class='description'>
+							<p> Posted on: <%= item.date %> at <%= item.time %>. </p>
+						</div>
+						<div class='tags'> 
+							<% if (item.tags!= ''){ %>
+								Tags:  #<%= item.tags %>
+							<% } %> 
+						</div>
+					</div>
+				<% });
+				%>
+				
+			</div>
+			<div class='footer'>
+				<img class='footer-image' src='https://peakdistrictwalks.net/wp-content/uploads/2020/06/Bamford-Edge-Peak-District-70.jpg'/>
+			</div>
+		</div>
 	</body>
-	</html>
-
-</body>
 </html>

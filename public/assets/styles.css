@@ -1,24 +1,130 @@
 
+#home{
+    background-image: linear-gradient(white, #ffeeba21, #e8daff2b,#e8daff47,#438dbd,#438dbd,#438dbd, #3a7dab);
+}
+.header{
+    text-align: center;
+}
+.header h1{
+    color:navy;
+    text-shadow: 1px 1px #cacaca;
+    margin-top: 50px;
+}
+.header h4{
+    font-size: large;
+    font-weight: 400;
+    margin-bottom: 0px;
 
+}
+.container{
+   width: 100%;
+   justify-content: space-around;
+   column-gap: 0px;
+   text-align: center;
+}
 .image-post{ 
-    background: whitesmoke;
-    border: 1px solid black;
+    background: white;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid rgba(116, 116, 116, 0.74);
     margin: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    width: 90%; 
+
 }
 .image{
     display: block;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 5%;
     margin-bottom: 10px;
     border: 1px solid black;
+    width: 90%;
 }
 .title-author{
-    display:flex;
+    display:block;
     justify-content: space-between;
     flex: wrap;
+    padding: 5px;
+}
+.title-author h3{
+    margin: 0px;
+}
+.title-author a{
+    color:#0078ca;
+    text-decoration: none;
+}
+.title-author a:hover{
+    color:#7549c7;
+    text-decoration: underline;
+}
+.title{
+    font-size: small;
+    text-align: left;
 }
 .author{
     font-size: smaller;
+    text-align: right;
+}
+.description{
+    font-size: small;
+    padding: 5px;
+    text-align: left;
+}
+.description p{
+    margin: 0px;
+}
+.tags{
+    font-size: smaller;
+    color: darkslategrey;
+    text-transform: capitalize;
+    padding: 8px;
+    padding-top: 0px;
+    text-align: justify;
+}
+
+.footer-image{
+    width: 120%;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-bottom: -10px;
+    filter: brightness(120%) saturate(60%) contrast(80%) opacity(80%);
+    
+}
+@media screen and (min-width: 300px) and (max-width: 660px) {
+    .container{
+        column-count: 1;
+    }
+    .image-post{
+        min-width: 300px;
+        max-width: 660px;
+    }
+}
+@media screen and (min-width: 660px)  and (max-width: 1000px) {
+    .container{
+        column-count: 2;
+    }
+    .image-post{
+        min-width: 300px;
+        max-width: none;
+    }
+}
+@media screen and (min-width: 1000px)  and (max-width: 1400px) {
+    .container{
+        column-count: 3;
+    }
+}
+@media screen and (min-width: 1400px)and (max-width: 1900px)  {
+    .container{
+        column-count: 4;    
+    }
+}
+@media screen and (min-width: 1900px) and (max-width: 2400px) {
+    .container{
+        column-count: 5;    
+    }
+}
+@media screen and (min-width: 2400px) {
+    .container{
+        column-count: 6;    
+    }
 }
